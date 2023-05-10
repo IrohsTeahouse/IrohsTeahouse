@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{amsmath}
+\usepackage{amssymb}
+\title{Matemática}
+\author{Lucas Rocha }
+\date{May 2023}
+\begin{document}
+\maketitle
+\section{Deduza A o determinante 4x4 usando a fórmula de Leibniz}
+Para calcular o determinante de uma matriz 4x4 usando a fórmula de Leibniz, precisamos expandir a matriz ao longo de qualquer linha ou coluna, e em seguida multiplicar cada elemento da linha ou coluna pelos seus respectivos cofatores. O cofator de um elemento é o determinante da matriz obtida ao eliminar a linha e coluna que contém o elemento.
+
+Para demonstrar esse processo, vamos considerar a matriz A:
+
+$$
+A = \begin{bmatrix}
+a_{11} & a_{12} & a_{13} & a_{14} \\
+a_{21} & a_{22} & a_{23} & a_{24} \\
+a_{31} & a_{32} & a_{33} & a_{34} \\
+a_{41} & a_{42} & a_{43} & a_{44}
+\end{bmatrix}
+$$
+
+Suponha que desejamos expandir a matriz ao longo da primeira linha. Nesse caso, temos:
+
+$$
+\begin{aligned}
+\det(A) &= a_{11}C_{11} - a_{12}C_{12} + a_{13}C_{13} - a_{14}C_{14} \\
+&= a_{11}\det\begin{bmatrix}
+a_{22} & a_{23} & a_{24} \\
+a_{32} & a_{33} & a_{34} \\
+a_{42} & a_{43} & a_{44}
+\end{bmatrix}
+- a_{12}\det\begin{bmatrix}
+a_{21} & a_{23} & a_{24} \\
+a_{31} & a_{33} & a_{34} \\
+a_{41} & a_{43} & a_{44}
+\end{bmatrix} \\
+&\quad + a_{13}\det\begin{bmatrix}
+a_{21} & a_{22} & a_{24} \\
+a_{31} & a_{32} & a_{34} \\
+a_{41} & a_{42} & a_{44}
+\end{bmatrix}
+- a_{14}\det\begin{bmatrix}
+a_{21} & a_{22} & a_{23} \\
+a_{31} & a_{32} & a_{33} \\
+a_{41} & a_{42} & a_{43}
+\end{bmatrix}
+\end{aligned}
+$$
+
+Dessa forma, podemos calcular o determinante de uma matriz 4x4 usando a fórmula de Leibniz sem a necessidade de eliminações.
+$$\det(A) = a_{11}a_{22}a_{33}a_{44} + a_{11}a_{22}a_{34}a_{43} + a_{11}a_{23}a_{32}a_{44} + a_{11}a_{23}a_{34}a_{42} + a_{11}a_{24}a_{32}a_{43} + a_{11}a_{24}a_{33}a_{42}$$
+$$- a_{12}a_{21}a_{33}a_{44} - a_{12}a_{21}a_{34}a_{43} - a_{12}a_{23}a_{31}a_{44} - a_{12}a_{23}a_{34}a_{41} - a_{12}a_{24}a_{31}a_{43} - a_{12}a_{24}a_{33}a_{41}$$
+$$+ a_{13}a_{21}a_{32}a_{44} + a_{13}a_{21}a_{34}a_{42} + a_{13}a_{22}a_{31}a_{44} + a_{13}a_{22}a_{34}a_{41} + a_{13}a_{24}a_{31}a_{42} + a_{13}a_{24}a_{32}a_{41}$$
+$$- a_{14}a_{21}a_{32}a_{43} - a_{14}a_{21}a_{33}a_{42} - a_{14}a_{22}a_{31}a_{43} - a_{14}a_{22}a_{33}a_{41} - a_{14}a_{23}a_{31}a_{42} - a_{14}a_{23}a_{32}a_{41}$$
+
+\section{Calcule o determinante, usando o que foi deduzido, de duas matrizes definidas}
+A determinante da primeira matriz 
+
+$$
+A = \begin{bmatrix}
+1 & 2 & 3 & 4 \\
+5 & 6 & 7 & 8 \\
+9 & 10 & 11 & 12 \\
+13 & 14 & 15 & 16
+\end{bmatrix}
+$$
+
+é igual a:
+
+$$
+\begin{aligned}
+\det(A) &= 1\cdot6\cdot11\cdot16 + 1\cdot6\cdot12\cdot15 + 1\cdot7\cdot10\cdot16 + 1\cdot7\cdot12\cdot14 + 1\cdot8\cdot10\cdot15 + 1\cdot8\cdot11\cdot14 \\
+&\quad - 2\cdot5\cdot11\cdot16 - 2\cdot5\cdot12\cdot15 - 2\cdot7\cdot9\cdot16 - 2\cdot7\cdot12\cdot13 - 2\cdot8\cdot9\cdot15 - 2\cdot8\cdot11\cdot13 \\
+&\quad + 3\cdot5\cdot10\cdot16 + 3\cdot5\cdot12\cdot14 + 3\cdot6\cdot9\cdot16 + 3\cdot6\cdot12\cdot13 + 3\cdot8\cdot9\cdot14 + 3\cdot8\cdot10\cdot13 \\
+&\quad - 4\cdot5\cdot10\cdot15 - 4\cdot5\cdot11\cdot14 - 4\cdot6\cdot9\cdot15 - 4\cdot6\cdot11\cdot13 - 4\cdot7\cdot9\cdot14 - 4\cdot7\cdot10\cdot13 \\
+&= 0
+\end{aligned}
+$$
+\\
+\\
+\\
+A determinante da segunda matriz 
+$$
+A = \begin{bmatrix}
+1 & 2 & 3 & 4 \\
+0 & 1 & 2 & 3 \\
+0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
+é igual a:
+
+$$
+\begin{aligned}
+\det(A) &= 1\cdot1\cdot1\cdot1 \\
+&\quad - 2\cdot0\cdot1\cdot1 - 3\cdot1\cdot0\cdot1 - 4\cdot1\cdot2\cdot0 \\
+&= 1
+\end{aligned}
+$$
+\section{Método em Haskell}
+Leibniz 4x4
+\\
+\begin{picture}
+\label{}
+\includegraphics[width=13cm,height=11cm]{haskell matematica.png}
+\\
+\\
+\end{picture}
+\section{Explicando o código em Haskell}
+Utilizando-se por meio do site \texttt{codepal.ai}, surge a seguinte explicação:
+
+A função \texttt{determinant\_leibniz} recebe uma matriz quadrada como entrada e retorna seu determinante usando a fórmula de Leibniz. A função primeiro verifica se a matriz de entrada é quadrada (ou seja, tem o mesmo número de linhas e colunas). Se a matriz não for quadrada, a função gera um erro.
+
+Em seguida, a função define uma função aninhada \texttt{det\_leibniz}, que recebe uma lista de permutações e uma matriz como entrada e retorna o determinante da matriz usando a fórmula de Leibniz. A função \texttt{det\_leibniz} primeiro verifica se a lista de permutações está vazia. Se estiver, a função retorna 0. Caso contrário, a função calcula o determinante usando a fórmula de Leibniz para a primeira permutação na lista e chama a si mesma recursivamente com as permutações restantes.
+
+A fórmula de Leibniz para o determinante de uma matriz $A_{n \times n}$ é dada por:
+
+$$\det(A) = \sum_{p} (-1)^{\operatorname{sgn}(p)} \prod_{i=1}^{n} A_{i, p(i)}$$
+
+onde $\operatorname{sgn}(p)$ é o sinal da permutação $p$, que é igual ao número de inversões em $p$ (ou seja, o número de pares de índices $i$ e $j$ de modo que $i < j$ e $p(i) > p(j)$).
+
+A função \texttt{det\_leibniz} calcula o sinal da permutação e o produto sobre os elementos da matriz usando compreensões de lista. Em seguida, a função retorna a soma do produto e o determinante calculado recursivamente para as permutações restantes.
+
+Por fim, a função \texttt{determinant\_leibniz} inicializa o tamanho da matriz e chama \texttt{det\_leibniz} com todas as permutações dos índices da matriz. A função retorna o determinante da matriz.
+
+A função principal define duas matrizes de exemplo e imprime seus determinantes usando a função \texttt{determinant\_leibniz}.
+\\
+Fonte da tradução \texttt{deepl.com}
+\\
+\\
+\\
+\\
+\begin{picture1}
+\label{}
+\centering
+\includegraphics[]{logo fatec.png}
+\\
+\end{picture1}
+\\
+\end{document}
